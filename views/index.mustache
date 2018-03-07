@@ -13,6 +13,12 @@
         <button type= "submit"> Add </button>
     </form>
 
+    <ul>
+        {{#todos}}
+         <li>{{description}} - {{done}}</li>
+        {{/todos}}
+    </ul>
+
 </body>
 </html>
 
