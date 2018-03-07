@@ -5,7 +5,7 @@ const mongoose = require('mongoose');
 const routes = require('./routes/routes')
 
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost:27017/mongoose_express_todos', function(){/*dummy function*/}).then(function(){
+mongoose.connect('mongodb://127.0.0.1/mongoose_express_todo').then(function(){
     console.log('Database connected.');
 });
 
