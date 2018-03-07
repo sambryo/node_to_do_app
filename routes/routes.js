@@ -19,8 +19,15 @@ router.post('/todos', function(req, res){
 });
 
 router.post('/todos/:id/completed', function(req, res){
-    console.log(req.params)
-    res.redirect('/');
+    let todoId = req.params.id;
+    Todo.findById(todoId)
+        .exec()
+        .then(function(result){
+            result.done = !result.done;
+            return result.save();
+        }).then(function(result){
+            res.redirect('/');
+        });
 });
 
 module.exports = router;
