@@ -15,7 +15,9 @@
 
     <ul>
         {{#todos}}
-         <li>{{description}} - {{done}}</li>
+         <li><form action="/todos/{{_id}}/completed" method="post">
+             {{description}} - {{done}}<button type="submit"> Done</button> </li>
+         </form>
         {{/todos}}
     </ul>
 

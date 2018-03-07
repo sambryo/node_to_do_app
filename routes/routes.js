@@ -12,7 +12,15 @@ router.post('/todos', function(req, res){
     newTodo.save().then(function(result){
         console.log(result);
         res.redirect('/');
+    }).catch(function(err){
+        console.log(err);
+        res.redirect('/');
     });
+});
+
+router.post('/todos/:id/completed', function(req, res){
+    console.log(req.params)
+    res.redirect('/');
 });
 
 module.exports = router;
