@@ -13,8 +13,12 @@ app.set('view engine', 'mustache');
 app.set('views', __dirname + '/views');
 
 app.get('/', function(req, res){
-    res.send('Hello');
+    res.render('index', {})
 });
+
+app.post('/todos', function(req, res){
+    res.json(req.body);
+})
 
 app.listen(3000, function(){
     console.log('listening on port 3000')
